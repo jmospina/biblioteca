@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dominio.unitaria.BibliotecarioTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-08-05T00:02:17" hostname="HOME" time="0.388">
+  <properties/>
+  <testcase name="calcularFechaEntregaMaxima" classname="dominio.unitaria.BibliotecarioTest" time="0.005"/>
+  <testcase name="esPalindromo" classname="dominio.unitaria.BibliotecarioTest" time="0.001"/>
+  <testcase name="prestarTest" classname="dominio.unitaria.BibliotecarioTest" time="0.134"/>
+  <testcase name="esPrestadoTest" classname="dominio.unitaria.BibliotecarioTest" time="0.241"/>
+  <testcase name="calculoSuma" classname="dominio.unitaria.BibliotecarioTest" time="0.001"/>
+  <testcase name="libroNoPrestadoTest" classname="dominio.unitaria.BibliotecarioTest" time="0.003"/>
+  <system-out><![CDATA[fechaPrestamo: 26/05/2017
+FechaEntrega: 12/06/2017
+Fecha de prestamo: 26/05/2017 Fecha de Entrega Maxima: 12/06/2017
+El ISBN 'abc121cba y abc121cba' es Palindromo
+El ISBN 'qerty ytre' NO es Palindromo
+Hibernate: drop table Libro if exists
+Hibernate: drop table Prestamo if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Libro (id bigint not null, anio integer not null, isbn varchar(255) not null, titulo varchar(255) not null, primary key (id))
+Hibernate: create table Prestamo (id bigint not null, fechaEntregaMaxima timestamp, fechaSolicitud timestamp, nombreUsuario varchar(255), ID_LIBRO bigint, primary key (id))
+Hibernate: alter table Prestamo add constraint FKebssys3uu8dj3dxjok5epcvi0 foreign key (ID_LIBRO) references Libro
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Libro (anio, isbn, titulo, id) values (?, ?, ?, ?)
+ISBN ingresado: a323ab
+Hibernate: select libroentit0_.id as id1_0_, libroentit0_.anio as anio2_0_, libroentit0_.isbn as isbn3_0_, libroentit0_.titulo as titulo4_0_ from Libro libroentit0_ where libroentit0_.isbn=?
+Hibernate: select prestamoen0_.id as id1_1_, prestamoen0_.fechaEntregaMaxima as fechaEnt2_1_, prestamoen0_.fechaSolicitud as fechaSol3_1_, prestamoen0_.ID_LIBRO as ID_LIBRO5_1_, prestamoen0_.nombreUsuario as nombreUs4_1_ from Prestamo prestamoen0_ cross join Libro libroentit1_ where prestamoen0_.ID_LIBRO=libroentit1_.id and libroentit1_.isbn=?
+Hibernate: select libroentit0_.id as id1_0_, libroentit0_.anio as anio2_0_, libroentit0_.isbn as isbn3_0_, libroentit0_.titulo as titulo4_0_ from Libro libroentit0_ where libroentit0_.isbn=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Prestamo (fechaEntregaMaxima, fechaSolicitud, ID_LIBRO, nombreUsuario, id) values (?, ?, ?, ?, ?)
+Hibernate: select libroentit0_.id as id1_0_, libroentit0_.anio as anio2_0_, libroentit0_.isbn as isbn3_0_, libroentit0_.titulo as titulo4_0_ from Libro libroentit0_ where libroentit0_.isbn=?
+Hibernate: select prestamoen0_.id as id1_1_, prestamoen0_.fechaEntregaMaxima as fechaEnt2_1_, prestamoen0_.fechaSolicitud as fechaSol3_1_, prestamoen0_.ID_LIBRO as ID_LIBRO5_1_, prestamoen0_.nombreUsuario as nombreUs4_1_ from Prestamo prestamoen0_ cross join Libro libroentit1_ where prestamoen0_.ID_LIBRO=libroentit1_.id and libroentit1_.isbn=?
+Libro en repositorio: Libro Test 1
+Prestamo en repositorio: Tue Mar 19 00:00:00 COT 2019 null Pepito Perez Libro Test 1
+El resultado de la suma de los digitos del ISBN es: 24
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

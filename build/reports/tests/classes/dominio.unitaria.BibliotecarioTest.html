@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class dominio.unitaria.BibliotecarioTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class dominio.unitaria.BibliotecarioTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dominio.unitaria.html">dominio.unitaria</a> &gt; BibliotecarioTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.385s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">calcularFechaEntregaMaxima</td>
+<td>0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">calculoSuma</td>
+<td>0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">esPalindromo</td>
+<td>0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">esPrestadoTest</td>
+<td>0.241s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">libroNoPrestadoTest</td>
+<td>0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">prestarTest</td>
+<td>0.134s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>fechaPrestamo: 26/05/2017
+FechaEntrega: 12/06/2017
+Fecha de prestamo: 26/05/2017 Fecha de Entrega Maxima: 12/06/2017
+El ISBN 'abc121cba y abc121cba' es Palindromo
+El ISBN 'qerty ytre' NO es Palindromo
+Hibernate: drop table Libro if exists
+Hibernate: drop table Prestamo if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Libro (id bigint not null, anio integer not null, isbn varchar(255) not null, titulo varchar(255) not null, primary key (id))
+Hibernate: create table Prestamo (id bigint not null, fechaEntregaMaxima timestamp, fechaSolicitud timestamp, nombreUsuario varchar(255), ID_LIBRO bigint, primary key (id))
+Hibernate: alter table Prestamo add constraint FKebssys3uu8dj3dxjok5epcvi0 foreign key (ID_LIBRO) references Libro
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Libro (anio, isbn, titulo, id) values (?, ?, ?, ?)
+ISBN ingresado: a323ab
+Hibernate: select libroentit0_.id as id1_0_, libroentit0_.anio as anio2_0_, libroentit0_.isbn as isbn3_0_, libroentit0_.titulo as titulo4_0_ from Libro libroentit0_ where libroentit0_.isbn=?
+Hibernate: select prestamoen0_.id as id1_1_, prestamoen0_.fechaEntregaMaxima as fechaEnt2_1_, prestamoen0_.fechaSolicitud as fechaSol3_1_, prestamoen0_.ID_LIBRO as ID_LIBRO5_1_, prestamoen0_.nombreUsuario as nombreUs4_1_ from Prestamo prestamoen0_ cross join Libro libroentit1_ where prestamoen0_.ID_LIBRO=libroentit1_.id and libroentit1_.isbn=?
+Hibernate: select libroentit0_.id as id1_0_, libroentit0_.anio as anio2_0_, libroentit0_.isbn as isbn3_0_, libroentit0_.titulo as titulo4_0_ from Libro libroentit0_ where libroentit0_.isbn=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Prestamo (fechaEntregaMaxima, fechaSolicitud, ID_LIBRO, nombreUsuario, id) values (?, ?, ?, ?, ?)
+Hibernate: select libroentit0_.id as id1_0_, libroentit0_.anio as anio2_0_, libroentit0_.isbn as isbn3_0_, libroentit0_.titulo as titulo4_0_ from Libro libroentit0_ where libroentit0_.isbn=?
+Hibernate: select prestamoen0_.id as id1_1_, prestamoen0_.fechaEntregaMaxima as fechaEnt2_1_, prestamoen0_.fechaSolicitud as fechaSol3_1_, prestamoen0_.ID_LIBRO as ID_LIBRO5_1_, prestamoen0_.nombreUsuario as nombreUs4_1_ from Prestamo prestamoen0_ cross join Libro libroentit1_ where prestamoen0_.ID_LIBRO=libroentit1_.id and libroentit1_.isbn=?
+Libro en repositorio: Libro Test 1
+Prestamo en repositorio: Tue Mar 19 00:00:00 COT 2019 null Pepito Perez Libro Test 1
+El resultado de la suma de los digitos del ISBN es: 24
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 2.2.1</a> at 04-ago-2019 19:02:17</p>
+</div>
+</div>
+</body>
